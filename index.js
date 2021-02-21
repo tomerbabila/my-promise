@@ -5,7 +5,7 @@ const states = {
 };
 
 class MyPromise {
-  constructor() {
+  constructor(executor) {
     this.state = states.pending;
     this.value = undefined;
     this.handlers = [];
@@ -19,5 +19,8 @@ class MyPromise {
       this.state = states.rejected;
       this.value = error;
     };
+
+    // execute callback
+    executor(resolve, reject);
   }
 }
