@@ -24,3 +24,5 @@ class MyPromise {
     executor(resolve, reject);
   }
 }
+
+module.exports = MyPromise;
